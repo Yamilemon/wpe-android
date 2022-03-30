@@ -49,7 +49,7 @@ android {
         abi {
             enable true
             reset()
-            include "arm64-v8a"
+            include "$target_abi"
         }
     }
 

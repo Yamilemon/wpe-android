@@ -340,7 +340,7 @@ class Bootstrap:
 
         if self.__arch == 'arm64':
             android_abi = 'arm64-v8a'
-        elif self.__arch == 'arm':
+        elif self.__arch == 'armv7':
             android_abi = 'armeabi-v7a'
         else:
             raise Exception('Architecture not supported')
@@ -392,7 +392,7 @@ if __name__ == "__main__":
         description='This script sets the dev environment up'
     )
 
-    parser.add_argument('-a', '--arch', metavar='architecture', required=False, default='arm64', choices=['arm64'], help='The target architecture')
+    parser.add_argument('-a', '--arch', metavar='architecture', required=False, default='arm64', choices=['arm64', 'armv7'], help='The target architecture')
     parser.add_argument('-c', '--cerbero', required=False, help='Path to the Cerbero checkout containing a completed build')
     parser.add_argument('-d', '--debug', required=False, action='store_true', help='Build the binaries with debug symbols')
     parser.add_argument('-b', '--build', required=False, action='store_true', help='Build dependencies instead of fetching the prebuilt binaries from the network')
